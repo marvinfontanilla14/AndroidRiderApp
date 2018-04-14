@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardElevation="10dp"
+    >
+
+ <LinearLayout
+     android:orientation="vertical"
+     android:padding="10dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+     <TextView
+         android:layout_marginTop="10dp"
+         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat ante sit amet lacus finibus sodales. Praesent sit amet ultrices leo. Nam quis iaculis est. Curabitur quis lectus metus. Integer luctus ultrices ultricies. Maecenas nec ipsum pulvinar, placerat felis iaculis, interdum lorem. Ut suscipit, risus a dapibus vulputate, erat metus porttitor velit, at accumsan dolor leo vitae nibh. Proin ac tempus purus, quis congue ex. Maecenas risus augue, eleifend vitae interdum sed, pellentesque ut ante."
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+     <TextView
+         android:layout_marginTop="10dp"
+         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat ante sit amet lacus finibus sodales. Praesent sit amet ultrices leo. Nam quis iaculis est. Curabitur quis lectus metus. Integer luctus ultrices ultricies. Maecenas nec ipsum pulvinar, placerat felis iaculis, interdum lorem. Ut suscipit, risus a dapibus vulputate, erat metus porttitor velit, at accumsan dolor leo vitae nibh. Proin ac tempus purus, quis congue ex. Maecenas risus augue, eleifend vitae interdum sed, pellentesque ut ante."
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+     <TextView
+         android:layout_marginTop="10dp"
+         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat ante sit amet lacus finibus sodales. Praesent sit amet ultrices leo. Nam quis iaculis est. Curabitur quis lectus metus. Integer luctus ultrices ultricies. Maecenas nec ipsum pulvinar, placerat felis iaculis, interdum lorem. Ut suscipit, risus a dapibus vulputate, erat metus porttitor velit, at accumsan dolor leo vitae nibh. Proin ac tempus purus, quis congue ex. Maecenas risus augue, eleifend vitae interdum sed, pellentesque ut ante."
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+ </LinearLayout>
+
+</android.support.v7.widget.CardView>
