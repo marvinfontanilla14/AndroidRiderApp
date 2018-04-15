@@ -136,6 +136,9 @@ public class Home extends AppCompatActivity
     //Send Alert
     IFCMService mService;
 
+    //Presense System
+    DatabaseReference driversAvailable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,6 +161,8 @@ public class Home extends AppCompatActivity
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
 
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -370,6 +375,22 @@ public class Home extends AppCompatActivity
                     public void onSuccess(Location location) {
                         // GPS location can be null if GPS is switched off
                         if (location != null) {
+
+                            //Presense System
+                            driversAvailable = FirebaseDatabase.getInstance().getReference(Common.driver_tbl);
+                            driversAvailable.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    // if have any change from Driver table., we will reload all drivers available
+                                    loadAllAvailableDriver();
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+
 //                            onLocationChanged(location);
                             mLastLocation = location;
 
@@ -407,6 +428,13 @@ public class Home extends AppCompatActivity
     }
 
     private void loadAllAvailableDriver() {
+
+        //First, we need delete all markers on map (include our location marker and available driver marker)
+        mMap.clear();
+        //after that, just add our location again
+        mMap.addMarker(new MarkerOptions().position(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()))
+                .title("You"));
+
         // Load all available Driver in distance 3km
         DatabaseReference driverLocation = FirebaseDatabase.getInstance().getReference(Common.driver_tbl);
         GeoFire gf = new GeoFire(driverLocation);
